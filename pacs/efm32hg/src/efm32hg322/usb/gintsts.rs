@@ -39,7 +39,7 @@ pub type CURMOD_R = crate::BitReader<bool>;
 #[doc = "Field `SOF` reader - Start of Frame"]
 pub type SOF_R = crate::BitReader<bool>;
 #[doc = "Field `SOF` writer - Start of Frame"]
-pub type SOF_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 3>;
+pub type SOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `RXFLVL` reader - RxFIFO Non-Empty"]
 pub type RXFLVL_R = crate::BitReader<bool>;
 #[doc = "Field `GINNAKEFF` reader - Global IN Non-periodic NAK Effective"]
@@ -49,27 +49,27 @@ pub type GOUTNAKEFF_R = crate::BitReader<bool>;
 #[doc = "Field `ERLYSUSP` reader - Early Suspend"]
 pub type ERLYSUSP_R = crate::BitReader<bool>;
 #[doc = "Field `ERLYSUSP` writer - Early Suspend"]
-pub type ERLYSUSP_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 10>;
+pub type ERLYSUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `USBSUSP` reader - USB Suspend"]
 pub type USBSUSP_R = crate::BitReader<bool>;
 #[doc = "Field `USBSUSP` writer - USB Suspend"]
-pub type USBSUSP_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 11>;
+pub type USBSUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `USBRST` reader - USB Reset"]
 pub type USBRST_R = crate::BitReader<bool>;
 #[doc = "Field `USBRST` writer - USB Reset"]
-pub type USBRST_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 12>;
+pub type USBRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `ENUMDONE` reader - Enumeration Done"]
 pub type ENUMDONE_R = crate::BitReader<bool>;
 #[doc = "Field `ENUMDONE` writer - Enumeration Done"]
-pub type ENUMDONE_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 13>;
+pub type ENUMDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `ISOOUTDROP` reader - Isochronous OUT Packet Dropped Interrupt"]
 pub type ISOOUTDROP_R = crate::BitReader<bool>;
 #[doc = "Field `ISOOUTDROP` writer - Isochronous OUT Packet Dropped Interrupt"]
-pub type ISOOUTDROP_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 14>;
+pub type ISOOUTDROP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `EOPF` reader - End of Periodic Frame Interrupt"]
 pub type EOPF_R = crate::BitReader<bool>;
 #[doc = "Field `EOPF` writer - End of Periodic Frame Interrupt"]
-pub type EOPF_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 15>;
+pub type EOPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `IEPINT` reader - IN Endpoints Interrupt"]
 pub type IEPINT_R = crate::BitReader<bool>;
 #[doc = "Field `OEPINT` reader - OUT Endpoints Interrupt"]
@@ -77,23 +77,23 @@ pub type OEPINT_R = crate::BitReader<bool>;
 #[doc = "Field `INCOMPISOIN` reader - Incomplete Isochronous IN Transfer"]
 pub type INCOMPISOIN_R = crate::BitReader<bool>;
 #[doc = "Field `INCOMPISOIN` writer - Incomplete Isochronous IN Transfer"]
-pub type INCOMPISOIN_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 20>;
+pub type INCOMPISOIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `INCOMPLP` reader - Incomplete Periodic Transfer"]
 pub type INCOMPLP_R = crate::BitReader<bool>;
 #[doc = "Field `INCOMPLP` writer - Incomplete Periodic Transfer"]
-pub type INCOMPLP_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 21>;
+pub type INCOMPLP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `FETSUSP` reader - Data Fetch Suspended"]
 pub type FETSUSP_R = crate::BitReader<bool>;
 #[doc = "Field `FETSUSP` writer - Data Fetch Suspended"]
-pub type FETSUSP_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 22>;
+pub type FETSUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `RESETDET` reader - Reset detected Interrupt"]
 pub type RESETDET_R = crate::BitReader<bool>;
 #[doc = "Field `RESETDET` writer - Reset detected Interrupt"]
-pub type RESETDET_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 23>;
+pub type RESETDET_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 #[doc = "Field `WKUPINT` reader - Resume/Remote Wakeup Detected Interrupt"]
 pub type WKUPINT_R = crate::BitReader<bool>;
 #[doc = "Field `WKUPINT` writer - Resume/Remote Wakeup Detected Interrupt"]
-pub type WKUPINT_W<'a> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, 31>;
+pub type WKUPINT_W<'a, const O: u8> = crate::BitWriter<'a, u32, GINTSTS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Current Mode of Operation"]
     #[inline(always)]
@@ -189,62 +189,74 @@ impl R {
 impl W {
     #[doc = "Bit 3 - Start of Frame"]
     #[inline(always)]
-    pub fn sof(&mut self) -> SOF_W {
+    #[must_use]
+    pub fn sof(&mut self) -> SOF_W<3> {
         SOF_W::new(self)
     }
     #[doc = "Bit 10 - Early Suspend"]
     #[inline(always)]
-    pub fn erlysusp(&mut self) -> ERLYSUSP_W {
+    #[must_use]
+    pub fn erlysusp(&mut self) -> ERLYSUSP_W<10> {
         ERLYSUSP_W::new(self)
     }
     #[doc = "Bit 11 - USB Suspend"]
     #[inline(always)]
-    pub fn usbsusp(&mut self) -> USBSUSP_W {
+    #[must_use]
+    pub fn usbsusp(&mut self) -> USBSUSP_W<11> {
         USBSUSP_W::new(self)
     }
     #[doc = "Bit 12 - USB Reset"]
     #[inline(always)]
-    pub fn usbrst(&mut self) -> USBRST_W {
+    #[must_use]
+    pub fn usbrst(&mut self) -> USBRST_W<12> {
         USBRST_W::new(self)
     }
     #[doc = "Bit 13 - Enumeration Done"]
     #[inline(always)]
-    pub fn enumdone(&mut self) -> ENUMDONE_W {
+    #[must_use]
+    pub fn enumdone(&mut self) -> ENUMDONE_W<13> {
         ENUMDONE_W::new(self)
     }
     #[doc = "Bit 14 - Isochronous OUT Packet Dropped Interrupt"]
     #[inline(always)]
-    pub fn isooutdrop(&mut self) -> ISOOUTDROP_W {
+    #[must_use]
+    pub fn isooutdrop(&mut self) -> ISOOUTDROP_W<14> {
         ISOOUTDROP_W::new(self)
     }
     #[doc = "Bit 15 - End of Periodic Frame Interrupt"]
     #[inline(always)]
-    pub fn eopf(&mut self) -> EOPF_W {
+    #[must_use]
+    pub fn eopf(&mut self) -> EOPF_W<15> {
         EOPF_W::new(self)
     }
     #[doc = "Bit 20 - Incomplete Isochronous IN Transfer"]
     #[inline(always)]
-    pub fn incompisoin(&mut self) -> INCOMPISOIN_W {
+    #[must_use]
+    pub fn incompisoin(&mut self) -> INCOMPISOIN_W<20> {
         INCOMPISOIN_W::new(self)
     }
     #[doc = "Bit 21 - Incomplete Periodic Transfer"]
     #[inline(always)]
-    pub fn incomplp(&mut self) -> INCOMPLP_W {
+    #[must_use]
+    pub fn incomplp(&mut self) -> INCOMPLP_W<21> {
         INCOMPLP_W::new(self)
     }
     #[doc = "Bit 22 - Data Fetch Suspended"]
     #[inline(always)]
-    pub fn fetsusp(&mut self) -> FETSUSP_W {
+    #[must_use]
+    pub fn fetsusp(&mut self) -> FETSUSP_W<22> {
         FETSUSP_W::new(self)
     }
     #[doc = "Bit 23 - Reset detected Interrupt"]
     #[inline(always)]
-    pub fn resetdet(&mut self) -> RESETDET_W {
+    #[must_use]
+    pub fn resetdet(&mut self) -> RESETDET_W<23> {
         RESETDET_W::new(self)
     }
     #[doc = "Bit 31 - Resume/Remote Wakeup Detected Interrupt"]
     #[inline(always)]
-    pub fn wkupint(&mut self) -> WKUPINT_W {
+    #[must_use]
+    pub fn wkupint(&mut self) -> WKUPINT_W<31> {
         WKUPINT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -266,11 +278,10 @@ impl crate::Readable for GINTSTS_SPEC {
 #[doc = "`write(|w| ..)` method takes [gintsts::W](W) writer structure"]
 impl crate::Writable for GINTSTS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GINTSTS to value 0"]
 impl crate::Resettable for GINTSTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

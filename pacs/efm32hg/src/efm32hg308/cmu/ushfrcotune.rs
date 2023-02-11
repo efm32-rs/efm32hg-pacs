@@ -37,7 +37,8 @@ impl From<crate::W<USHFRCOTUNE_SPEC>> for W {
 #[doc = "Field `FINETUNING` reader - Oscillator fine frequency adjust"]
 pub type FINETUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FINETUNING` writer - Oscillator fine frequency adjust"]
-pub type FINETUNING_W<'a> = crate::FieldWriter<'a, u32, USHFRCOTUNE_SPEC, u8, u8, 6, 0>;
+pub type FINETUNING_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, USHFRCOTUNE_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Oscillator fine frequency adjust"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Oscillator fine frequency adjust"]
     #[inline(always)]
-    pub fn finetuning(&mut self) -> FINETUNING_W {
+    #[must_use]
+    pub fn finetuning(&mut self) -> FINETUNING_W<0> {
         FINETUNING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for USHFRCOTUNE_SPEC {
 #[doc = "`write(|w| ..)` method takes [ushfrcotune::W](W) writer structure"]
 impl crate::Writable for USHFRCOTUNE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets USHFRCOTUNE to value 0x20"]
 impl crate::Resettable for USHFRCOTUNE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x20
-    }
+    const RESET_VALUE: Self::Ux = 0x20;
 }

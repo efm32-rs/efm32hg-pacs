@@ -37,9 +37,11 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `DMPUAP` reader - DMPU Active Polarity"]
 pub type DMPUAP_R = crate::BitReader<bool>;
 #[doc = "Field `DMPUAP` writer - DMPU Active Polarity"]
-pub type DMPUAP_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type DMPUAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `LEMOSCCTRL` reader - Low Energy Mode Oscillator Control"]
+pub type LEMOSCCTRL_R = crate::FieldReader<u8, LEMOSCCTRL_A>;
 #[doc = "Low Energy Mode Oscillator Control\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LEMOSCCTRL_A {
     #[doc = "0: Low Energy Mode has no effect on neither USBC or USHFRCO."]
@@ -55,8 +57,6 @@ impl From<LEMOSCCTRL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LEMOSCCTRL` reader - Low Energy Mode Oscillator Control"]
-pub type LEMOSCCTRL_R = crate::FieldReader<u8, LEMOSCCTRL_A>;
 impl LEMOSCCTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,8 +85,9 @@ impl LEMOSCCTRL_R {
     }
 }
 #[doc = "Field `LEMOSCCTRL` writer - Low Energy Mode Oscillator Control"]
-pub type LEMOSCCTRL_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, LEMOSCCTRL_A, 2, 4>;
-impl<'a> LEMOSCCTRL_W<'a> {
+pub type LEMOSCCTRL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, LEMOSCCTRL_A, 2, O>;
+impl<'a, const O: u8> LEMOSCCTRL_W<'a, O> {
     #[doc = "Low Energy Mode has no effect on neither USBC or USHFRCO."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -106,35 +107,35 @@ impl<'a> LEMOSCCTRL_W<'a> {
 #[doc = "Field `LEMPHYCTRL` reader - Low Energy Mode USB PHY Control"]
 pub type LEMPHYCTRL_R = crate::BitReader<bool>;
 #[doc = "Field `LEMPHYCTRL` writer - Low Energy Mode USB PHY Control"]
-pub type LEMPHYCTRL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 7>;
+pub type LEMPHYCTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `LEMIDLEEN` reader - Low Energy Mode on Bus Idle Enable"]
 pub type LEMIDLEEN_R = crate::BitReader<bool>;
 #[doc = "Field `LEMIDLEEN` writer - Low Energy Mode on Bus Idle Enable"]
-pub type LEMIDLEEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 9>;
+pub type LEMIDLEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `LEMNAKEN` reader - Low Energy Mode on OUT NAK Enable"]
 pub type LEMNAKEN_R = crate::BitReader<bool>;
 #[doc = "Field `LEMNAKEN` writer - Low Energy Mode on OUT NAK Enable"]
-pub type LEMNAKEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 10>;
+pub type LEMNAKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `LEMADDRMEN` reader - Low Energy Mode on Device Address Mismatch Enable"]
 pub type LEMADDRMEN_R = crate::BitReader<bool>;
 #[doc = "Field `LEMADDRMEN` writer - Low Energy Mode on Device Address Mismatch Enable"]
-pub type LEMADDRMEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 11>;
+pub type LEMADDRMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `VREGDIS` reader - Voltage Regulator Disable"]
 pub type VREGDIS_R = crate::BitReader<bool>;
 #[doc = "Field `VREGDIS` writer - Voltage Regulator Disable"]
-pub type VREGDIS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 16>;
+pub type VREGDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `VREGOSEN` reader - VREGO Sense Enable"]
 pub type VREGOSEN_R = crate::BitReader<bool>;
 #[doc = "Field `VREGOSEN` writer - VREGO Sense Enable"]
-pub type VREGOSEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 17>;
+pub type VREGOSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `BIASPROGEM01` reader - Regulator Bias Programming Value in EM0/1"]
 pub type BIASPROGEM01_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BIASPROGEM01` writer - Regulator Bias Programming Value in EM0/1"]
-pub type BIASPROGEM01_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, 20>;
+pub type BIASPROGEM01_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, O>;
 #[doc = "Field `BIASPROGEM23` reader - Regulator Bias Programming Value in EM2/3"]
 pub type BIASPROGEM23_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BIASPROGEM23` writer - Regulator Bias Programming Value in EM2/3"]
-pub type BIASPROGEM23_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, 24>;
+pub type BIASPROGEM23_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 1 - DMPU Active Polarity"]
     #[inline(always)]
@@ -190,52 +191,62 @@ impl R {
 impl W {
     #[doc = "Bit 1 - DMPU Active Polarity"]
     #[inline(always)]
-    pub fn dmpuap(&mut self) -> DMPUAP_W {
+    #[must_use]
+    pub fn dmpuap(&mut self) -> DMPUAP_W<1> {
         DMPUAP_W::new(self)
     }
     #[doc = "Bits 4:5 - Low Energy Mode Oscillator Control"]
     #[inline(always)]
-    pub fn lemoscctrl(&mut self) -> LEMOSCCTRL_W {
+    #[must_use]
+    pub fn lemoscctrl(&mut self) -> LEMOSCCTRL_W<4> {
         LEMOSCCTRL_W::new(self)
     }
     #[doc = "Bit 7 - Low Energy Mode USB PHY Control"]
     #[inline(always)]
-    pub fn lemphyctrl(&mut self) -> LEMPHYCTRL_W {
+    #[must_use]
+    pub fn lemphyctrl(&mut self) -> LEMPHYCTRL_W<7> {
         LEMPHYCTRL_W::new(self)
     }
     #[doc = "Bit 9 - Low Energy Mode on Bus Idle Enable"]
     #[inline(always)]
-    pub fn lemidleen(&mut self) -> LEMIDLEEN_W {
+    #[must_use]
+    pub fn lemidleen(&mut self) -> LEMIDLEEN_W<9> {
         LEMIDLEEN_W::new(self)
     }
     #[doc = "Bit 10 - Low Energy Mode on OUT NAK Enable"]
     #[inline(always)]
-    pub fn lemnaken(&mut self) -> LEMNAKEN_W {
+    #[must_use]
+    pub fn lemnaken(&mut self) -> LEMNAKEN_W<10> {
         LEMNAKEN_W::new(self)
     }
     #[doc = "Bit 11 - Low Energy Mode on Device Address Mismatch Enable"]
     #[inline(always)]
-    pub fn lemaddrmen(&mut self) -> LEMADDRMEN_W {
+    #[must_use]
+    pub fn lemaddrmen(&mut self) -> LEMADDRMEN_W<11> {
         LEMADDRMEN_W::new(self)
     }
     #[doc = "Bit 16 - Voltage Regulator Disable"]
     #[inline(always)]
-    pub fn vregdis(&mut self) -> VREGDIS_W {
+    #[must_use]
+    pub fn vregdis(&mut self) -> VREGDIS_W<16> {
         VREGDIS_W::new(self)
     }
     #[doc = "Bit 17 - VREGO Sense Enable"]
     #[inline(always)]
-    pub fn vregosen(&mut self) -> VREGOSEN_W {
+    #[must_use]
+    pub fn vregosen(&mut self) -> VREGOSEN_W<17> {
         VREGOSEN_W::new(self)
     }
     #[doc = "Bits 20:21 - Regulator Bias Programming Value in EM0/1"]
     #[inline(always)]
-    pub fn biasprogem01(&mut self) -> BIASPROGEM01_W {
+    #[must_use]
+    pub fn biasprogem01(&mut self) -> BIASPROGEM01_W<20> {
         BIASPROGEM01_W::new(self)
     }
     #[doc = "Bits 24:25 - Regulator Bias Programming Value in EM2/3"]
     #[inline(always)]
-    pub fn biasprogem23(&mut self) -> BIASPROGEM23_W {
+    #[must_use]
+    pub fn biasprogem23(&mut self) -> BIASPROGEM23_W<24> {
         BIASPROGEM23_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -257,11 +268,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x20"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x20
-    }
+    const RESET_VALUE: Self::Ux = 0x20;
 }

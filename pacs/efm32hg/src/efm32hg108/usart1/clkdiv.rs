@@ -37,11 +37,11 @@ impl From<crate::W<CLKDIV_SPEC>> for W {
 #[doc = "Field `DIVEXT` reader - Extended Fractional Clock Divider"]
 pub type DIVEXT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIVEXT` writer - Extended Fractional Clock Divider"]
-pub type DIVEXT_W<'a> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u8, u8, 3, 3>;
+pub type DIVEXT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u8, u8, 3, O>;
 #[doc = "Field `DIV` reader - Fractional Clock Divider"]
 pub type DIV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DIV` writer - Fractional Clock Divider"]
-pub type DIV_W<'a> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u16, u16, 15, 6>;
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 3:5 - Extended Fractional Clock Divider"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 3:5 - Extended Fractional Clock Divider"]
     #[inline(always)]
-    pub fn divext(&mut self) -> DIVEXT_W {
+    #[must_use]
+    pub fn divext(&mut self) -> DIVEXT_W<3> {
         DIVEXT_W::new(self)
     }
     #[doc = "Bits 6:20 - Fractional Clock Divider"]
     #[inline(always)]
-    pub fn div(&mut self) -> DIV_W {
+    #[must_use]
+    pub fn div(&mut self) -> DIV_W<6> {
         DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CLKDIV_SPEC {
 #[doc = "`write(|w| ..)` method takes [clkdiv::W](W) writer structure"]
 impl crate::Writable for CLKDIV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLKDIV to value 0"]
 impl crate::Resettable for CLKDIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

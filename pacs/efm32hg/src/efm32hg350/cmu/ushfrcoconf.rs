@@ -34,8 +34,10 @@ impl From<crate::W<USHFRCOCONF_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BAND` reader - USHFRCO Band Select"]
+pub type BAND_R = crate::FieldReader<u8, BAND_A>;
 #[doc = "USHFRCO Band Select\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BAND_A {
     #[doc = "1: 48 MHz band. NOTE: Also set the TUNING and FINETUNING value when changing band."]
@@ -49,8 +51,6 @@ impl From<BAND_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BAND` reader - USHFRCO Band Select"]
-pub type BAND_R = crate::FieldReader<u8, BAND_A>;
 impl BAND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,8 +73,8 @@ impl BAND_R {
     }
 }
 #[doc = "Field `BAND` writer - USHFRCO Band Select"]
-pub type BAND_W<'a> = crate::FieldWriter<'a, u32, USHFRCOCONF_SPEC, u8, BAND_A, 3, 0>;
-impl<'a> BAND_W<'a> {
+pub type BAND_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USHFRCOCONF_SPEC, u8, BAND_A, 3, O>;
+impl<'a, const O: u8> BAND_W<'a, O> {
     #[doc = "48 MHz band. NOTE: Also set the TUNING and FINETUNING value when changing band."]
     #[inline(always)]
     pub fn _48mhz(self) -> &'a mut W {
@@ -89,7 +89,7 @@ impl<'a> BAND_W<'a> {
 #[doc = "Field `USHFRCODIV2DIS` reader - USHFRCO divider for HFCLK disable"]
 pub type USHFRCODIV2DIS_R = crate::BitReader<bool>;
 #[doc = "Field `USHFRCODIV2DIS` writer - USHFRCO divider for HFCLK disable"]
-pub type USHFRCODIV2DIS_W<'a> = crate::BitWriter<'a, u32, USHFRCOCONF_SPEC, bool, 4>;
+pub type USHFRCODIV2DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, USHFRCOCONF_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - USHFRCO Band Select"]
     #[inline(always)]
@@ -105,12 +105,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - USHFRCO Band Select"]
     #[inline(always)]
-    pub fn band(&mut self) -> BAND_W {
+    #[must_use]
+    pub fn band(&mut self) -> BAND_W<0> {
         BAND_W::new(self)
     }
     #[doc = "Bit 4 - USHFRCO divider for HFCLK disable"]
     #[inline(always)]
-    pub fn ushfrcodiv2dis(&mut self) -> USHFRCODIV2DIS_W {
+    #[must_use]
+    pub fn ushfrcodiv2dis(&mut self) -> USHFRCODIV2DIS_W<4> {
         USHFRCODIV2DIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -132,11 +134,10 @@ impl crate::Readable for USHFRCOCONF_SPEC {
 #[doc = "`write(|w| ..)` method takes [ushfrcoconf::W](W) writer structure"]
 impl crate::Writable for USHFRCOCONF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets USHFRCOCONF to value 0x01"]
 impl crate::Resettable for USHFRCOCONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

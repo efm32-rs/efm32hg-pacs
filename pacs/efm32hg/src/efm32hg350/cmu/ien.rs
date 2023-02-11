@@ -37,39 +37,39 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `HFRCORDY` reader - HFRCO Ready Interrupt Enable"]
 pub type HFRCORDY_R = crate::BitReader<bool>;
 #[doc = "Field `HFRCORDY` writer - HFRCO Ready Interrupt Enable"]
-pub type HFRCORDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type HFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `HFXORDY` reader - HFXO Ready Interrupt Enable"]
 pub type HFXORDY_R = crate::BitReader<bool>;
 #[doc = "Field `HFXORDY` writer - HFXO Ready Interrupt Enable"]
-pub type HFXORDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type HFXORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `LFRCORDY` reader - LFRCO Ready Interrupt Enable"]
 pub type LFRCORDY_R = crate::BitReader<bool>;
 #[doc = "Field `LFRCORDY` writer - LFRCO Ready Interrupt Enable"]
-pub type LFRCORDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 2>;
+pub type LFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `LFXORDY` reader - LFXO Ready Interrupt Enable"]
 pub type LFXORDY_R = crate::BitReader<bool>;
 #[doc = "Field `LFXORDY` writer - LFXO Ready Interrupt Enable"]
-pub type LFXORDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 3>;
+pub type LFXORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `AUXHFRCORDY` reader - AUXHFRCO Ready Interrupt Enable"]
 pub type AUXHFRCORDY_R = crate::BitReader<bool>;
 #[doc = "Field `AUXHFRCORDY` writer - AUXHFRCO Ready Interrupt Enable"]
-pub type AUXHFRCORDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 4>;
+pub type AUXHFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CALRDY` reader - Calibration Ready Interrupt Enable"]
 pub type CALRDY_R = crate::BitReader<bool>;
 #[doc = "Field `CALRDY` writer - Calibration Ready Interrupt Enable"]
-pub type CALRDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 5>;
+pub type CALRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CALOF` reader - Calibration Overflow Interrupt Enable"]
 pub type CALOF_R = crate::BitReader<bool>;
 #[doc = "Field `CALOF` writer - Calibration Overflow Interrupt Enable"]
-pub type CALOF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 6>;
+pub type CALOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `USHFRCORDY` reader - USHFRCO Ready Interrupt Enable"]
 pub type USHFRCORDY_R = crate::BitReader<bool>;
 #[doc = "Field `USHFRCORDY` writer - USHFRCO Ready Interrupt Enable"]
-pub type USHFRCORDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 8>;
+pub type USHFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `USBCHFOSCSEL` reader - USBC HF-oscillator Selected Interrupt Flag Clear"]
 pub type USBCHFOSCSEL_R = crate::BitReader<bool>;
 #[doc = "Field `USBCHFOSCSEL` writer - USBC HF-oscillator Selected Interrupt Flag Clear"]
-pub type USBCHFOSCSEL_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 9>;
+pub type USBCHFOSCSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - HFRCO Ready Interrupt Enable"]
     #[inline(always)]
@@ -120,47 +120,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - HFRCO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn hfrcordy(&mut self) -> HFRCORDY_W {
+    #[must_use]
+    pub fn hfrcordy(&mut self) -> HFRCORDY_W<0> {
         HFRCORDY_W::new(self)
     }
     #[doc = "Bit 1 - HFXO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn hfxordy(&mut self) -> HFXORDY_W {
+    #[must_use]
+    pub fn hfxordy(&mut self) -> HFXORDY_W<1> {
         HFXORDY_W::new(self)
     }
     #[doc = "Bit 2 - LFRCO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn lfrcordy(&mut self) -> LFRCORDY_W {
+    #[must_use]
+    pub fn lfrcordy(&mut self) -> LFRCORDY_W<2> {
         LFRCORDY_W::new(self)
     }
     #[doc = "Bit 3 - LFXO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn lfxordy(&mut self) -> LFXORDY_W {
+    #[must_use]
+    pub fn lfxordy(&mut self) -> LFXORDY_W<3> {
         LFXORDY_W::new(self)
     }
     #[doc = "Bit 4 - AUXHFRCO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn auxhfrcordy(&mut self) -> AUXHFRCORDY_W {
+    #[must_use]
+    pub fn auxhfrcordy(&mut self) -> AUXHFRCORDY_W<4> {
         AUXHFRCORDY_W::new(self)
     }
     #[doc = "Bit 5 - Calibration Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn calrdy(&mut self) -> CALRDY_W {
+    #[must_use]
+    pub fn calrdy(&mut self) -> CALRDY_W<5> {
         CALRDY_W::new(self)
     }
     #[doc = "Bit 6 - Calibration Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn calof(&mut self) -> CALOF_W {
+    #[must_use]
+    pub fn calof(&mut self) -> CALOF_W<6> {
         CALOF_W::new(self)
     }
     #[doc = "Bit 8 - USHFRCO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn ushfrcordy(&mut self) -> USHFRCORDY_W {
+    #[must_use]
+    pub fn ushfrcordy(&mut self) -> USHFRCORDY_W<8> {
         USHFRCORDY_W::new(self)
     }
     #[doc = "Bit 9 - USBC HF-oscillator Selected Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn usbchfoscsel(&mut self) -> USBCHFOSCSEL_W {
+    #[must_use]
+    pub fn usbchfoscsel(&mut self) -> USBCHFOSCSEL_W<9> {
         USBCHFOSCSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -182,11 +191,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
